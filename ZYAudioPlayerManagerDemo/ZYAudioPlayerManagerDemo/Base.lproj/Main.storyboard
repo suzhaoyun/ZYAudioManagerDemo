@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TQz-H7-40R">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ztc-Yt-tVL">
+            <objects>
+                <tableViewController id="TQz-H7-40R" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="6D8-1g-gBI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="56" id="JR6-6F-WlI" customClass="ZYAudioListCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JR6-6F-WlI" id="ML0-xx-CFk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7I-c5-4u8">
+                                            <rect key="frame" x="15" y="11" width="37" height="34"/>
+                                            <state key="normal" title="开始">
+                                                <color key="titleColor" red="1" green="0.2666666667" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="playClick:" destination="JR6-6F-WlI" eventType="touchUpInside" id="TEG-Kx-1YB"/>
+                                            </connections>
+                                        </button>
+                                        <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HOl-cI-K7F">
+                                            <rect key="frame" x="70" y="12" width="226" height="31"/>
+                                        </slider>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VB7-82-w0w">
+                                            <rect key="frame" x="314" y="17" width="46" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="VB7-82-w0w" firstAttribute="centerY" secondItem="ML0-xx-CFk" secondAttribute="centerY" id="0JY-ub-bke"/>
+                                        <constraint firstItem="HOl-cI-K7F" firstAttribute="leading" secondItem="F7I-c5-4u8" secondAttribute="trailing" constant="20" id="Maj-vK-ST6"/>
+                                        <constraint firstAttribute="trailing" secondItem="VB7-82-w0w" secondAttribute="trailing" constant="15" id="ZOJ-Ka-wAa"/>
+                                        <constraint firstItem="F7I-c5-4u8" firstAttribute="leading" secondItem="ML0-xx-CFk" secondAttribute="leading" constant="15" id="fBS-kD-AOq"/>
+                                        <constraint firstItem="HOl-cI-K7F" firstAttribute="centerY" secondItem="ML0-xx-CFk" secondAttribute="centerY" id="llV-ig-RiJ"/>
+                                        <constraint firstItem="VB7-82-w0w" firstAttribute="leading" secondItem="HOl-cI-K7F" secondAttribute="trailing" constant="20" id="tea-FL-UgH"/>
+                                        <constraint firstItem="F7I-c5-4u8" firstAttribute="centerY" secondItem="ML0-xx-CFk" secondAttribute="centerY" id="zkM-go-FGD"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playBtn" destination="F7I-c5-4u8" id="J3j-tU-lE5"/>
+                                    <outlet property="progressV" destination="HOl-cI-K7F" id="sxz-6m-Axr"/>
+                                    <outlet property="timeL" destination="VB7-82-w0w" id="3Fm-8U-xk0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TQz-H7-40R" id="ENZ-JF-ZqI"/>
+                            <outlet property="delegate" destination="TQz-H7-40R" id="RtF-PW-7ui"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8DR-tM-tnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552.79999999999995" y="-166.8665667166417"/>
+        </scene>
+    </scenes>
+</document>
